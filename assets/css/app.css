@@ -1,0 +1,66 @@
+html {
+  position: relative;
+  min-height: 100%;
+  
+  background: url('../img/main.jpg') top right no-repeat fixed;
+  background-size: cover;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+  background: transparent;
+}
+
+a {
+  color: #c75400;
+}
+
+a:hover {
+  color: black;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  color: white;
+  background-color: rgba(250,105,0,0.8);
+}
+
+.footer .container  p {
+  padding: 10px 0 0;
+}
+
+.main {
+  margin-top: 20px;
+}
+
+p {
+	text-align: justify;
+  padding: 5px;
+}
+
+h1, h2, h3 {
+	font-family: 'Cabin Sketch', cursive;
+}
+
+input, button {
+	margin: 10px 0;
+}
+
+button.btn {
+  margin: 0;
+  width: 50%;
+  color: #fff;
+  border: none;
+  background-color: black;
+}
+
+.table td, .table th {
+  text-align: center;
+}

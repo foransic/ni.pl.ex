@@ -1,0 +1,21 @@
+{
+  "name": "Ni.Pl.Ex",
+  "version": "0.0.1",
+  "description": "Nike+ Exporter",
+  "main": "app.js",
+  "author": "François Souin",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.13.3",
+    "express": "4.10.6",
+    "ejs": "2.3.3",
+    "cookie-session": "1.2.0",
+    "request": "2.61.0",
+    "xmlbuilder": "2.6.4",
+    "async": "1.4.2"
+  },
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/foransic/ni.pl.ex.git"
+  }
+}

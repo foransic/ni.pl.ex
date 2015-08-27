@@ -1,0 +1,37 @@
+<%- include('header'); %>
+	<div class="row">
+		<div class="col-md-8">
+		<h3>2. Download your activities</h3>
+		<% if (typeof activities != 'undefined') { %>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Download</th>
+          <th>Type</th>
+					<th>Date</th>
+          <th>Distance</th>
+					<th>Duration</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% activities.forEach(function(activity) { %>
+					<tr class="activity">
+						<td><a href="./download/<%= activity.id %>"><span class="glyphicon glyphicon-download-alt"></span></a></td>
+            <td><%= activity.type %></td>
+						<td><%= activity.date %></td>
+            <td><%= activity.distance %></td>
+						<td><%= activity.duration %></td>
+					</tr>
+				<% }); %>
+			</tbody>
+		</table>
+		<% } else { %>
+			No activities recorded.
+		<% } %>
+    </div> <!-- col-md-8 -->
+    <div class="col-md-4">
+      <h1>Ni.Pl.Ex</h1>
+      <p class="bg-success">We have successfully retrieved your activities !</p>
+    </div>
+  </div> <!-- row -->
+<%- include('footer'); %>
