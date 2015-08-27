@@ -34,4 +34,4 @@ app.route('/login')
 app.get('/activities', activity.list)
 app.get('/download/:activity', activity.download)
 
-app.listen(9001, 'localhost');
+app.listen(9001);

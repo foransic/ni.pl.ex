@@ -3,10 +3,8 @@ var request = require('request');
 exports.login = function(req, res) {
   username = req.body.username;
   password = req.body.password;
-  
-  var r = request.defaults();
-  
-  r.post(
+
+  request.post(
     'https://developer.nike.com/services/login', 
     {form:{username:username, password:password}}, 
     function(error, response, body) {

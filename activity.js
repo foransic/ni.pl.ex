@@ -3,9 +3,7 @@ var builder = require('xmlbuilder');
 var async = require('async');
 
 call = function(url, res, success) {
-  var r = request.defaults();
-  
-  r.get(url, function(error, response, body) {
+  request.get(url, function(error, response, body) {
     if (error) {
       // something wrong happen, go back to activities with default error message
       res.render('activities.ejs', {error: 'DEFAULT'});
