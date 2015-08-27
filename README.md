@@ -1,4 +1,4 @@
-# Ni.Pl.Ex
+# Ni.Pl.Ex.
 
 ## Description
 
@@ -11,6 +11,12 @@ Before using it, please read & accept the remarks below :
 - It's provided as is, so may not works for some specific case.
 - We only ask for your Nike+ username & password to retrieve the activities. These credentials are never stored by us, and HTTPS is used to transmit informations.
 - We only get informations from Nike+ and never update or delete informations.
+
+## Technologies
+- Node.js
+- EJS
+- Bootstrap
+- jQuery
 
 ## Known bugs
 - When losing session, the redirection to login page doesn't work
