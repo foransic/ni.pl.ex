@@ -73,25 +73,23 @@ exports.download = function(req, res) {
         xml.att('xmlns:gpxtpx', 'http://www.garmin.com/xmlschemas/TrackPointExtension/v1');
         
         lastDate = new Date(activity.startTime);
-        
+        duration = activity.metricSummary.duration;
+        // *1 is ugly, but it does the job ...
+        durationInMillis = (duration.split(':')[0]*3600 + duration.split(':')[1]*60 + duration.split(':')[2].split('.')[0]*1)*1000;
+        nbWpoints = gps.waypoints.length;
+        secondInterval = durationInMillis/nbWpoints;
+
+        interval = Math.round(durationInMillis/nbWpoints);
+        milliInterval = interval%1000;
+        secondInterval = (interval - milliInterval)/1000;
         trk= xml.ele('trk');
         trk.ele('name').dat(activity.activityType + ' ' + lastDate);
         trk.ele('time', activity.startTime);
         trkseg = trk.ele('trkseg');
-          
-        intervalMetric = gps.intervalMetric;
-        intervalUnit = gps.intervalUnit;
         
         gps.waypoints.forEach(function(waypoint) {
-          /*
-          if (intervalUnit = 'SEC') {
-            lastDate.setSeconds(lastDate.getSeconds() + intervalMetric);
-          } else if (intervalUnit = 'MIN') {
-            lastDate.setMinutes(lastDate.getMinutes() + intervalMetric);
-          } // possibly other cases to manage ...
-          seems like intervalUnit & intervalMetric are false, instead use 1sec interval
-          */
-          lastDate.setSeconds(lastDate.getSeconds() + 1);
+          lastDate.setSeconds(lastDate.getSeconds() + secondInterval);
+          lastDate.setMilliseconds(lastDate.getMilliseconds() + milliInterval);
           
           trkpt = trkseg.ele('trkpt', {'lat' : waypoint.latitude, 'lon' : waypoint.longitude});
           trkpt.ele('ele', waypoint.elevation)
