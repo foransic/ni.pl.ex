@@ -1,5 +1,7 @@
 # Ni.Pl.Ex.
 
+## Before using it, you must be aware that it's not working anymore because of new Nike API limitations. I'm not updating it anymore so use it at you own risk ;-)
+
 ## Description
 
 Ni.Pl.Ex (for Nike+ Exporter) is a simple tool to export your Nike+ tracks in GPX format, which is accepted by a lot of other training apps & websites.
